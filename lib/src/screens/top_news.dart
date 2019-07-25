@@ -5,6 +5,8 @@ import 'package:londonair/src/model/headlines.dart';
 import 'package:londonair/src/services/news_api_service.dart';
 import 'package:londonair/src/services/service_locator.dart';
 
+import 'news_webview.dart';
+
 class TopNewsPage extends StatefulWidget {
   @override
   _TopNewsPageState createState() => _TopNewsPageState();
@@ -38,6 +40,9 @@ class _TopNewsPageState extends State<TopNewsPage> {
                         return ArticleSummaryCard(
                           article: article,
                           articleIndex: index + 1,
+                          onTap: () {
+                            openArticleInWebviewFor(article, context);
+                          },
                         );
                       });
               }
@@ -45,4 +50,10 @@ class _TopNewsPageState extends State<TopNewsPage> {
       ),
     );
   }
+
+  void openArticleInWebviewFor(Article article, BuildContext context) {
+    Navigator.push(context,
+        MaterialPageRoute(builder: (context) => NewsWebView(url: article.url)));
+  }
+
 }
