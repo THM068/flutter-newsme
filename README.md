@@ -1,6 +1,6 @@
-# londonair
+# News Me
 
-A new Flutter project.
+A new Flutter project to search for news using the News Api.
 
 ## Getting Started
 
