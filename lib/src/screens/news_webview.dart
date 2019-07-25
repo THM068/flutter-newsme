@@ -36,7 +36,7 @@ class _NewsWebViewState extends State<NewsWebView> {
               children: <Widget>[
                 Expanded(
                   child: WebView(
-                      javascriptMode: JavascriptMode.unrestricted,
+                      javascriptMode: JavascriptMode.disabled,
                       initialUrl: this.url,
                       onPageFinished: _handleLoad),
 
