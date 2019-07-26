@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:londonair/src/componets/article_summary_card.dart';
+import 'package:londonair/src/componets/reuseblecomponents.dart';
 import 'package:londonair/src/model/article.dart';
 import 'package:londonair/src/model/headlines.dart';
 import 'package:londonair/src/services/news_api_service.dart';
@@ -26,7 +27,7 @@ class _TopNewsPageState extends State<TopNewsPage> {
                   return Text('Press button to start.');
                 case ConnectionState.active:
                 case ConnectionState.waiting:
-                  return CircularProgressIndicator();
+                  return displayProgressIndicator();
                 case ConnectionState.done:
                   if (snapshot.hasError) {
                     return Text('Error: ${snapshot.error}');
