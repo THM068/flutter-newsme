@@ -17,8 +17,7 @@ class _TopNewsPageState extends State<TopNewsPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
+    return SafeArea(
         child: FutureBuilder<HeadLines>(
             future: this.newsApiService.getTopHeadlines(),
             builder: (BuildContext context, AsyncSnapshot<HeadLines> snapshot) {
@@ -47,8 +46,7 @@ class _TopNewsPageState extends State<TopNewsPage> {
                       });
               }
             }),
-      ),
-    );
+      );
   }
 
   void openArticleInWebviewFor(Article article, BuildContext context) {
