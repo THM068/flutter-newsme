@@ -3,6 +3,7 @@ import 'package:londonair/src/componets/article_summary_card.dart';
 import 'package:londonair/src/componets/reuseblecomponents.dart';
 import 'package:londonair/src/model/article.dart';
 import 'package:londonair/src/model/headlines.dart';
+import 'package:londonair/src/services/book_mark_service.dart';
 import 'package:londonair/src/services/news_api_service.dart';
 import 'package:londonair/src/services/service_locator.dart';
 

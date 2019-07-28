@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:londonair/src/screens/bookmarks_view.dart';
 import 'package:londonair/src/screens/top_news.dart';
 import 'package:londonair/src/services/service_locator.dart';
+
+import 'src/services/location.dart';
 
 void main() {
   setup();
@@ -41,16 +44,19 @@ class _NavigationScreenState extends State<NavigationScreen> {
       'Sources',
       style: optionStyle,
     ),
-    Text(
-      'My News',
-      style: optionStyle,
-    ),
+    BookMarksView(),
   ];
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedTab = index;
     });
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    getLocation();
   }
 
   @override
@@ -82,5 +88,10 @@ class _NavigationScreenState extends State<NavigationScreen> {
         onTap: _onItemTapped,
       ),
     );
+  }
+
+  void getLocation() {
+    Location location = Location();
+    location.getCurrentLocation();
   }
 }

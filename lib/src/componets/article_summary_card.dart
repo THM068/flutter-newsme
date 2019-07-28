@@ -4,6 +4,8 @@ import 'package:londonair/src/componets/image_place_holder_widget.dart';
 import 'package:londonair/src/componets/news_icon.dart';
 import 'package:londonair/src/constants/constants.dart';
 import 'package:londonair/src/model/article.dart';
+import 'package:londonair/src/services/book_mark_service.dart';
+import 'package:londonair/src/services/service_locator.dart';
 
 class ArticleSummaryCard extends StatelessWidget {
   final Article article;
@@ -74,7 +76,7 @@ class ArticleSummaryCard extends StatelessWidget {
                   child: NewsIcon(
                     icon: FontAwesomeIcons.bookmark,
                     onPressed: () {
-                      print("I am pressed");
+                      sl.get<BookMarkService>().setArticle(article);
                     },
                   ),
                 ),
